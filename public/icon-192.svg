@@ -1,0 +1,26 @@
+<svg width="192" height="192" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#14122A"/>
+      <stop offset="100%" stop-color="#06060F"/>
+    </radialGradient>
+  </defs>
+  <rect width="192" height="192" rx="42" fill="url(#bg)"/>
+  <!-- Outer ring gold -->
+  <circle cx="96" cy="96" r="54" fill="none" stroke="rgba(212,168,76,0.5)" stroke-width="1.5"/>
+  <!-- Inner ring violet -->
+  <circle cx="96" cy="96" r="39" fill="none" stroke="rgba(139,159,212,0.35)" stroke-width="1"/>
+  <!-- 4-point star -->
+  <polygon points="96,46 104,86 96,94 88,86" fill="rgba(212,168,76,0.8)"/>
+  <polygon points="96,146 88,106 96,98 104,106" fill="rgba(212,168,76,0.8)"/>
+  <polygon points="46,96 86,88 94,96 86,104" fill="rgba(212,168,76,0.7)"/>
+  <polygon points="146,96 106,104 98,96 106,88" fill="rgba(212,168,76,0.7)"/>
+  <!-- Center -->
+  <circle cx="96" cy="96" r="9" fill="rgba(212,168,76,0.9)"/>
+  <circle cx="96" cy="96" r="4" fill="rgba(234,240,248,0.95)"/>
+  <!-- Dot accents -->
+  <circle cx="96" cy="38" r="2" fill="rgba(212,168,76,0.4)"/>
+  <circle cx="154" cy="96" r="2" fill="rgba(139,159,212,0.4)"/>
+  <circle cx="96" cy="154" r="2" fill="rgba(212,168,76,0.4)"/>
+  <circle cx="38" cy="96" r="2" fill="rgba(139,159,212,0.4)"/>
+</svg>
