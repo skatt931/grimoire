@@ -149,17 +149,17 @@ export default async function HomePage() {
       </p>
 
       {/* Action grid */}
-      <StaggerList className="grid grid-cols-2 gap-2.5 px-5">
+      <StaggerList className="grid grid-cols-2 gap-2.5 px-5" style={{ gridAutoRows: "1fr" }}>
         {[
           {
             href: "/journal/new",
             icon: <svg className="w-[26px] h-[26px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M5.64 18.36l2.12-2.12M16.24 7.76l2.12-2.12" /><circle cx="12" cy="12" r="3.5" /></svg>,
-            name: "Нове читання", desc: "Відкрити новий шлях", accent: true,
+            name: "Нове читання", desc: "Новий шлях", accent: true,
           },
           {
             href: "/journal",
             icon: <svg className="w-[26px] h-[26px]" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="2" width="16" height="18" rx="2" /><line x1="7" y1="7" x2="15" y2="7" /><line x1="7" y1="11" x2="15" y2="11" /><line x1="7" y1="15" x2="11" y2="15" /></svg>,
-            name: "Мій журнал", desc: "Голос твого серця", accent: false,
+            name: "Мій журнал", desc: "Голос серця", accent: false,
           },
           {
             href: "/cards",
@@ -169,12 +169,12 @@ export default async function HomePage() {
           {
             href: "/insights",
             icon: <svg className="w-[26px] h-[26px]" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"><circle cx="4.5" cy="16.5" r="1.5" fill="currentColor" stroke="none" /><circle cx="11" cy="8.5" r="1.5" fill="currentColor" stroke="none" /><circle cx="17.5" cy="14" r="1.5" fill="currentColor" stroke="none" /><circle cx="17.5" cy="4.5" r="1.5" fill="currentColor" stroke="none" /><path d="M4.5 16.5L11 8.5M11 8.5L17.5 14M11 8.5L17.5 4.5" /></svg>,
-            name: "Знаки", desc: "Що повертається до тебе", accent: false,
+            name: "Знаки", desc: "Твої повтори", accent: false,
           },
         ].map(({ href, icon, name, desc, accent }) => (
-          <StaggerItem key={href}>
+          <StaggerItem key={href} className="h-full">
           <Link href={href}
-            className="rounded-[20px] p-4 flex flex-col relative overflow-hidden"
+            className="h-full rounded-[20px] p-4 flex flex-col relative overflow-hidden"
             style={{
               background: accent ? "rgba(139,159,212,.14)" : "rgba(13,11,30,.75)",
               border: `1px solid ${accent ? "rgba(139,159,212,.26)" : "rgba(139,159,212,.09)"}`,

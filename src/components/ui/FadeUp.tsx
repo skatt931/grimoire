@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 
 interface FadeUpProps {
   children: ReactNode;
@@ -31,13 +31,14 @@ export default function FadeUp({ children, delay = 0, className }: FadeUpProps) 
 }
 
 // Staggered children container
-export function StaggerList({ children, className }: { children: ReactNode; className?: string }) {
+export function StaggerList({ children, className, style }: { children: ReactNode; className?: string; style?: React.CSSProperties }) {
   return (
     <motion.div
       initial="hidden"
       animate="visible"
       variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
       className={className}
+      style={style}
     >
       {children}
     </motion.div>

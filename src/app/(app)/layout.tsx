@@ -28,9 +28,12 @@ export default async function AppLayout({
       </div>
       <Stars />
 
-      {/* Page content — pb accounts for bottom nav + iOS home bar */}
+      {/* Page content — pt for status bar, pb for bottom nav + iOS home bar */}
       <main className="relative z-10 min-h-dvh"
-        style={{ paddingBottom: "calc(72px + env(safe-area-inset-bottom, 0px))" }}>
+        style={{
+          paddingTop: "env(safe-area-inset-top, 0px)",
+          paddingBottom: "calc(72px + env(safe-area-inset-bottom, 0px))",
+        }}>
         {children}
       </main>
 
