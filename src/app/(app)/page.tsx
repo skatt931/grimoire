@@ -39,14 +39,14 @@ export default async function HomePage() {
       <div className="px-6 pt-2 pb-4">
         <div className="flex items-center gap-2 mb-1">
           <Alstroemeria size={16} />
-          <span className="text-[10px] font-[600] tracking-[0.28em] uppercase"
+          <span className="text-[13px] font-[600] tracking-[0.28em] uppercase"
             style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.75)" }}>
             ♊ Гримуар Ані
           </span>
           <Alstroemeria size={16} />
         </div>
         <Greeting />
-        <p className="text-[13px] mt-2 italic"
+        <p className="text-[16px] mt-2 italic"
           style={{ fontFamily: "var(--font-marcellus)", color: "rgba(212,168,76,.6)" }}>
           Між картами — тиша. В тиші — ти.
         </p>
@@ -56,7 +56,7 @@ export default async function HomePage() {
       {/* Divider */}
       <div className="flex items-center gap-2 px-6 mb-4">
         <div className="flex-1 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(139,159,212,.2), transparent)" }} />
-        <span className="text-[10px]" style={{ color: "rgba(139,159,212,.4)" }}>✦</span>
+        <span className="text-[13px]" style={{ color: "rgba(139,159,212,.4)" }}>✦</span>
         <div className="flex-1 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(139,159,212,.2), transparent)" }} />
       </div>
 
@@ -67,19 +67,19 @@ export default async function HomePage() {
         <div className="flex items-center justify-between px-4 py-2.5 border-b"
           style={{ borderColor: "rgba(155,128,212,.1)" }}>
           <div className="flex items-center gap-2">
-            <span className="text-[14px]">♊</span>
-            <span className="text-[10px] font-[700] tracking-[0.18em] uppercase"
+            <span className="text-[17px]">♊</span>
+            <span className="text-[13px] font-[700] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(155,128,212,.85)" }}>
               Близнюки · Сьогодні
             </span>
           </div>
-          <span className="text-[9px] font-[500]"
+          <span className="text-[11px] font-[500]"
             style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.3)" }}>
             ↻ {today.toLocaleDateString("uk-UA", { day: "numeric", month: "long" })}
           </span>
         </div>
         <div className="px-4 py-3">
-          <p className="text-[13px] leading-[1.75] italic mb-3"
+          <p className="text-[16px] leading-[1.75] italic mb-3"
             style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.75)" }}>
             «{horoscopeText}»
           </p>
@@ -89,7 +89,7 @@ export default async function HomePage() {
               <div className="h-full rounded-full"
                 style={{ width: `${energyLevel * 100}%`, background: "linear-gradient(to right, rgba(155,128,212,.6), rgba(212,168,76,.5))" }} />
             </div>
-            <span className="text-[9px] font-[600] tracking-[0.14em] uppercase whitespace-nowrap"
+            <span className="text-[11px] font-[600] tracking-[0.14em] uppercase whitespace-nowrap"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(212,168,76,.55)" }}>
               Енергія дня
             </span>
@@ -106,21 +106,21 @@ export default async function HomePage() {
           <div className="absolute inset-0 rounded-[18px] pointer-events-none"
             style={{ background: "linear-gradient(135deg, rgba(139,159,212,.06) 0%, transparent 60%)" }} />
           <div className="relative">
-            <p className="text-[9px] font-[700] tracking-[0.15em] uppercase mb-2"
+            <p className="text-[11px] font-[700] tracking-[0.15em] uppercase mb-2"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.75)" }}>
               ✦ Останнє читання
             </p>
-            <p className="text-[17px] mb-1"
+            <p className="text-[20px] mb-1"
               style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
               {lastReading.title}
             </p>
-            <p className="text-[11px] mb-2"
+            <p className="text-[14px] mb-2"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.32)" }}>
               {new Date(lastReading.created_at).toLocaleDateString("uk-UA", { day: "numeric", month: "long" })}
               {" · "}{lastReading.spread_type === "three_card" ? "Три карти" : "Власний розклад"}
             </p>
             {lastReading.notes && (
-              <p className="text-[12px] italic line-clamp-2"
+              <p className="text-[15px] italic line-clamp-2"
                 style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.5)" }}>
                 «{lastReading.notes}»
               </p>
@@ -130,12 +130,12 @@ export default async function HomePage() {
       ) : (
         <div className="mx-5 mb-4 rounded-[18px] p-5 text-center"
           style={{ background: "rgba(13,11,30,.6)", border: "1px dashed rgba(139,159,212,.15)" }}>
-          <p className="text-[13px] italic mb-3"
+          <p className="text-[16px] italic mb-3"
             style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.4)" }}>
             Твій гримуар ще порожній.<br />Час розпочати першу сторінку.
           </p>
           <Link href="/journal/new"
-            className="text-[11px] font-[600] tracking-[0.12em] uppercase"
+            className="text-[14px] font-[600] tracking-[0.12em] uppercase"
             style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.8)" }}>
             Перше читання →
           </Link>
@@ -143,7 +143,7 @@ export default async function HomePage() {
       )}
 
       {/* Section label */}
-      <p className="px-6 mb-3 text-[10px] font-[600] tracking-[0.2em] uppercase"
+      <p className="px-6 mb-3 text-[13px] font-[600] tracking-[0.2em] uppercase"
         style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.28)" }}>
         Твій простір
       </p>
@@ -186,10 +186,10 @@ export default async function HomePage() {
             <span className="mb-2.5" style={{ color: accent ? "rgba(185,165,245,.95)" : "rgba(139,159,212,.85)" }}>
               {icon}
             </span>
-            <span className="text-[13px] mb-0.5" style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
+            <span className="text-[16px] mb-0.5" style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
               {name}
             </span>
-            <span className="text-[11px] font-[300] leading-[1.4]"
+            <span className="text-[14px] font-[300] leading-[1.4]"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.38)" }}>
               {desc}
             </span>

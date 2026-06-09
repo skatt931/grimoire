@@ -65,7 +65,7 @@ export default function CardDetailPage() {
   if (!card) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <span className="text-[13px] animate-pulse" style={{ color: "rgba(139,159,212,.5)", fontFamily: "var(--font-manrope)" }}>
+        <span className="text-[16px] animate-pulse" style={{ color: "rgba(139,159,212,.5)", fontFamily: "var(--font-manrope)" }}>
           Завантаження...
         </span>
       </div>
@@ -90,7 +90,7 @@ export default function CardDetailPage() {
             <path d="M14 17l-5-5 5-5" />
           </svg>
         </button>
-        <span className="text-[13px]" style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.45)" }}>
+        <span className="text-[16px]" style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.45)" }}>
           Карти
         </span>
         <button onClick={toggleFav}
@@ -127,7 +127,7 @@ export default function CardDetailPage() {
             <circle cx="40" cy="40" r="4" fill="rgba(212,168,76,.4)" />
           </svg>
           {card.arcana === "major" && card.number !== null && (
-            <span className="text-[11px] tracking-[0.25em]"
+            <span className="text-[14px] tracking-[0.25em]"
               style={{ fontFamily: "var(--font-marcellus)", color: "rgba(212,168,76,.6)" }}>
               {ROMAN[card.number]}
             </span>
@@ -137,11 +137,11 @@ export default function CardDetailPage() {
 
       {/* Card info */}
       <div className="px-5">
-        <p className="text-[11px] tracking-[0.25em] uppercase mb-1"
+        <p className="text-[14px] tracking-[0.25em] uppercase mb-1"
           style={{ fontFamily: "var(--font-manrope)", color: "rgba(212,168,76,.65)" }}>
           {card.arcana === "major" ? "Старший Аркан" : `${SUIT_LABELS[card.suit ?? ""]} · Молодший Аркан`}
         </p>
-        <h2 className="text-[28px] leading-[1.1] mb-4"
+        <h2 className="text-[31px] leading-[1.1] mb-4"
           style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
           {card.name_uk}
         </h2>
@@ -149,7 +149,7 @@ export default function CardDetailPage() {
         {/* Keywords */}
         <div className="flex flex-wrap gap-2 mb-5">
           {card.keywords.map((kw) => (
-            <span key={kw} className="text-[11px] font-[500] px-3 py-1 rounded-full"
+            <span key={kw} className="text-[14px] font-[500] px-3 py-1 rounded-full"
               style={{
                 fontFamily: "var(--font-manrope)",
                 color: "rgba(139,159,212,.8)",
@@ -166,7 +166,7 @@ export default function CardDetailPage() {
           style={{ border: "1px solid rgba(139,159,212,.15)" }}>
           {tabs.map(({ key, label }) => (
             <button key={key} onClick={() => setTab(key)}
-              className="flex-1 py-2 text-[10px] font-[600] tracking-[0.08em] transition-all"
+              className="flex-1 py-2 text-[13px] font-[600] tracking-[0.08em] transition-all"
               style={{
                 fontFamily: "var(--font-manrope)",
                 background: tab === key ? "rgba(139,159,212,.18)" : "transparent",
@@ -179,14 +179,14 @@ export default function CardDetailPage() {
 
         {/* Tab content */}
         {tab === "up" && (
-          <p className="text-[14px] leading-[1.8]"
+          <p className="text-[17px] leading-[1.8]"
             style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.7)" }}>
             {card.meaning_up}
           </p>
         )}
 
         {tab === "rev" && (
-          <p className="text-[14px] leading-[1.8]"
+          <p className="text-[17px] leading-[1.8]"
             style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.7)" }}>
             {card.meaning_rev}
           </p>
@@ -196,8 +196,8 @@ export default function CardDetailPage() {
           <div className="space-y-3">
             {card.reflections.map((q, i) => (
               <div key={i} className="flex gap-3 items-start">
-                <span className="mt-1 flex-shrink-0 text-[10px]" style={{ color: "rgba(212,168,76,.5)" }}>✦</span>
-                <p className="text-[14px] leading-[1.75] italic"
+                <span className="mt-1 flex-shrink-0 text-[13px]" style={{ color: "rgba(212,168,76,.5)" }}>✦</span>
+                <p className="text-[17px] leading-[1.75] italic"
                   style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.65)" }}>
                   {q}
                 </p>
@@ -213,7 +213,7 @@ export default function CardDetailPage() {
               onChange={(e) => setNote(e.target.value)}
               placeholder="Твої особисті нотатки про цю карту..."
               rows={6}
-              className="w-full px-4 py-3 rounded-[14px] text-[13px] leading-[1.7] outline-none resize-none"
+              className="w-full px-4 py-3 rounded-[14px] text-[16px] leading-[1.7] outline-none resize-none"
               style={{
                 background: "rgba(13,11,30,.8)",
                 border: "1px solid rgba(139,159,212,.15)",
@@ -224,7 +224,7 @@ export default function CardDetailPage() {
             <button
               onClick={saveNote}
               disabled={saving || note === savedNote}
-              className="w-full py-3 rounded-[14px] text-[12px] font-[600] tracking-[0.1em] uppercase transition-all disabled:opacity-40"
+              className="w-full py-3 rounded-[14px] text-[15px] font-[600] tracking-[0.1em] uppercase transition-all disabled:opacity-40"
               style={{
                 background: "rgba(139,159,212,.15)",
                 border: "1px solid rgba(139,159,212,.3)",

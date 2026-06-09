@@ -80,13 +80,13 @@ export default function LoginPage() {
         </div>
 
         <h1
-          className="text-[32px] font-[400] leading-tight mb-2"
+          className="text-[36px] font-[400] leading-tight mb-2"
           style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}
         >
           Гримуар Ані
         </h1>
         <p
-          className="text-[13px] mb-8"
+          className="text-[16px] mb-8"
           style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.4)" }}
         >
           ♊ Твій особистий простір
@@ -102,7 +102,7 @@ export default function LoginPage() {
               key={m}
               type="button"
               onClick={() => { setMode(m); setError(""); }}
-              className="flex-1 py-2 rounded-[9px] text-[12px] font-[600] tracking-[0.08em] transition-all"
+              className="flex-1 py-2 rounded-[9px] text-[15px] font-[600] tracking-[0.08em] transition-all"
               style={{
                 fontFamily: "var(--font-manrope)",
                 background: mode === m ? "rgba(139,159,212,.18)" : "transparent",
@@ -123,7 +123,7 @@ export default function LoginPage() {
             placeholder="твоя@пошта.com"
             required
             autoComplete="email"
-            className="w-full px-4 py-3.5 rounded-[14px] text-[14px] outline-none transition-all"
+            className="w-full px-4 py-3.5 rounded-[14px] text-[17px] outline-none transition-all"
             style={{
               background: "rgba(13,11,30,.8)",
               border: "1px solid rgba(139,159,212,.2)",
@@ -139,7 +139,7 @@ export default function LoginPage() {
             required
             autoComplete={mode === "signup" ? "new-password" : "current-password"}
             minLength={6}
-            className="w-full px-4 py-3.5 rounded-[14px] text-[14px] outline-none transition-all"
+            className="w-full px-4 py-3.5 rounded-[14px] text-[17px] outline-none transition-all"
             style={{
               background: "rgba(13,11,30,.8)",
               border: "1px solid rgba(139,159,212,.2)",
@@ -150,7 +150,7 @@ export default function LoginPage() {
 
           {error && (
             <p
-              className="text-[12px] text-center px-2"
+              className="text-[15px] text-center px-2"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(212,100,100,.85)" }}
             >
               {error}
@@ -160,7 +160,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3.5 rounded-[14px] text-[13px] font-[600] tracking-[0.1em] transition-all"
+            className="w-full py-3.5 rounded-[14px] text-[16px] font-[600] tracking-[0.1em] transition-all"
             style={{
               background: "linear-gradient(135deg, rgba(139,159,212,.25), rgba(139,159,212,.15))",
               border: "1px solid rgba(139,159,212,.35)",
@@ -175,7 +175,7 @@ export default function LoginPage() {
 
         {mode === "signin" && (
           <p
-            className="mt-4 text-[11px]"
+            className="mt-4 text-[14px]"
             style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.22)" }}
           >
             Немає акаунту?{" "}

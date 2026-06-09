@@ -44,7 +44,7 @@ export default function ReadingDetailPage() {
 
   if (!reading) return (
     <div className="flex items-center justify-center min-h-[60vh]">
-      <span className="text-[13px] animate-pulse" style={{ color: "rgba(139,159,212,.5)", fontFamily: "var(--font-manrope)" }}>Завантаження...</span>
+      <span className="text-[16px] animate-pulse" style={{ color: "rgba(139,159,212,.5)", fontFamily: "var(--font-manrope)" }}>Завантаження...</span>
     </div>
   );
 
@@ -61,7 +61,7 @@ export default function ReadingDetailPage() {
             <path d="M14 17l-5-5 5-5" />
           </svg>
         </button>
-        <button onClick={deleteReading} className="text-[11px] font-[500]"
+        <button onClick={deleteReading} className="text-[14px] font-[500]"
           style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.25)" }}>
           Видалити
         </button>
@@ -70,16 +70,16 @@ export default function ReadingDetailPage() {
       <div className="px-5 space-y-5">
         {/* Title + meta */}
         <div>
-          <p className="text-[10px] font-[600] tracking-[0.2em] uppercase mb-1"
+          <p className="text-[13px] font-[600] tracking-[0.2em] uppercase mb-1"
             style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
             {new Date(reading.created_at).toLocaleDateString("uk-UA", { day: "numeric", month: "long", year: "numeric" })}
           </p>
-          <h1 className="text-[26px] leading-tight mb-1"
+          <h1 className="text-[28px] leading-tight mb-1"
             style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
             {reading.title}
           </h1>
           {reading.question && (
-            <p className="text-[13px] italic"
+            <p className="text-[16px] italic"
               style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.5)" }}>
               «{reading.question}»
             </p>
@@ -89,7 +89,7 @@ export default function ReadingDetailPage() {
         {/* Cards */}
         {readingCards.length > 0 && (
           <div className="space-y-2">
-            <p className="text-[10px] font-[600] tracking-[0.18em] uppercase"
+            <p className="text-[13px] font-[600] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
               Карти
             </p>
@@ -99,21 +99,21 @@ export default function ReadingDetailPage() {
                 style={{ background: "rgba(13,11,30,.75)", border: "1px solid rgba(139,159,212,.1)" }}>
                 <div className="w-9 h-14 rounded-[6px] flex items-center justify-center flex-shrink-0"
                   style={{ background: rc.cards?.arcana === "major" ? "rgba(212,168,76,.1)" : "rgba(139,159,212,.08)", border: "1px solid rgba(139,159,212,.12)" }}>
-                  <span className="text-[8px]" style={{ color: rc.cards?.arcana === "major" ? "rgba(212,168,76,.5)" : "rgba(139,159,212,.4)" }}>✦</span>
+                  <span className="text-[10px]" style={{ color: rc.cards?.arcana === "major" ? "rgba(212,168,76,.5)" : "rgba(139,159,212,.4)" }}>✦</span>
                 </div>
                 <div className="flex-1 min-w-0">
                   {rc.position_name && (
-                    <p className="text-[9px] font-[600] tracking-[0.12em] uppercase"
+                    <p className="text-[11px] font-[600] tracking-[0.12em] uppercase"
                       style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.55)" }}>
                       {rc.position_name}
                     </p>
                   )}
-                  <p className="text-[14px]" style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
+                  <p className="text-[17px]" style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
                     {rc.cards?.name_uk}
-                    {rc.is_reversed && <span className="ml-1 text-[10px]" style={{ color: "rgba(212,168,76,.6)" }}>↓</span>}
+                    {rc.is_reversed && <span className="ml-1 text-[13px]" style={{ color: "rgba(212,168,76,.6)" }}>↓</span>}
                   </p>
                   {rc.note && (
-                    <p className="text-[11px] italic truncate"
+                    <p className="text-[14px] italic truncate"
                       style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.4)" }}>
                       {rc.note}
                     </p>
@@ -131,11 +131,11 @@ export default function ReadingDetailPage() {
         {reading.notes && (
           <div className="rounded-[16px] p-4"
             style={{ background: "rgba(13,11,30,.6)", border: "1px solid rgba(139,159,212,.1)" }}>
-            <p className="text-[10px] font-[600] tracking-[0.18em] uppercase mb-2"
+            <p className="text-[13px] font-[600] tracking-[0.18em] uppercase mb-2"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
               Нотатки
             </p>
-            <p className="text-[13px] italic leading-[1.75]"
+            <p className="text-[16px] italic leading-[1.75]"
               style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.65)" }}>
               «{reading.notes}»
             </p>
@@ -146,12 +146,12 @@ export default function ReadingDetailPage() {
         <div className="rounded-[16px] p-4"
           style={{ background: "rgba(13,11,30,.6)", border: "1px solid rgba(139,159,212,.1)" }}>
           <div className="flex items-center justify-between mb-2">
-            <p className="text-[10px] font-[600] tracking-[0.18em] uppercase"
+            <p className="text-[13px] font-[600] tracking-[0.18em] uppercase"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
               {showReflection ? "Редагувати" : "Інтерпретація"}
             </p>
             <button onClick={() => setShowReflection(!showReflection)}
-              className="text-[10px] font-[500]"
+              className="text-[13px] font-[500]"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
               {showReflection ? "Готово" : savedReflection ? "Редагувати ✎" : "+ Додати"}
             </button>
@@ -162,21 +162,21 @@ export default function ReadingDetailPage() {
               <textarea value={reflection} onChange={(e) => setReflection(e.target.value)}
                 placeholder="Мої висновки, думки, відчуття після цього читання..."
                 rows={5}
-                className="w-full px-3 py-2.5 rounded-[10px] text-[13px] outline-none resize-none leading-[1.7]"
+                className="w-full px-3 py-2.5 rounded-[10px] text-[16px] outline-none resize-none leading-[1.7]"
                 style={{ background: "rgba(6,6,15,.8)", border: "1px solid rgba(139,159,212,.15)", color: "#EAF0F8", fontFamily: "var(--font-manrope)" }} />
               <button onClick={saveReflection} disabled={saving || reflection === savedReflection}
-                className="w-full py-2.5 rounded-[10px] text-[11px] font-[600] tracking-[0.1em] uppercase disabled:opacity-40"
+                className="w-full py-2.5 rounded-[10px] text-[14px] font-[600] tracking-[0.1em] uppercase disabled:opacity-40"
                 style={{ background: "rgba(139,159,212,.15)", border: "1px solid rgba(139,159,212,.3)", color: "#EAF0F8", fontFamily: "var(--font-manrope)" }}>
                 {saving ? "Зберігаємо..." : "Зберегти"}
               </button>
             </div>
           ) : savedReflection ? (
-            <p className="text-[13px] italic leading-[1.75]"
+            <p className="text-[16px] italic leading-[1.75]"
               style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.65)" }}>
               «{savedReflection}»
             </p>
           ) : (
-            <p className="text-[12px] italic"
+            <p className="text-[15px] italic"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.25)" }}>
               Ще немає нотаток...
             </p>

@@ -85,7 +85,7 @@ export default function BottomNav() {
             <span className="w-[22px] h-[22px] flex items-center justify-center">
               {icon}
             </span>
-            <span className="text-[9px] font-[500] tracking-[0.06em]"
+            <span className="text-[11px] font-[500] tracking-[0.06em]"
               style={{ fontFamily: "var(--font-manrope)" }}>
               {label}
             </span>

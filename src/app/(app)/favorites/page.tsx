@@ -35,11 +35,11 @@ export default function FavoritesPage() {
     <div className="pt-4 pb-6">
       {/* Header */}
       <div className="px-6 pt-2 pb-5">
-        <h1 className="text-[28px] leading-[1.1]"
+        <h1 className="text-[31px] leading-[1.1]"
           style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
           Обране
         </h1>
-        <p className="text-[12px] mt-0.5"
+        <p className="text-[15px] mt-0.5"
           style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.35)" }}>
           Твоя особиста колекція
         </p>
@@ -47,7 +47,7 @@ export default function FavoritesPage() {
 
       {loading && (
         <div className="flex justify-center py-16">
-          <span className="text-[13px] animate-pulse"
+          <span className="text-[16px] animate-pulse"
             style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.4)" }}>
             Завантаження...
           </span>
@@ -63,12 +63,12 @@ export default function FavoritesPage() {
               <path d="M20 13.5a8.5 8.5 0 01-8.5 8.5 8.5 8.5 0 010-17A6.5 6.5 0 0120 13.5z" />
             </svg>
           </div>
-          <p className="text-[14px] italic mb-4"
+          <p className="text-[17px] italic mb-4"
             style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.4)" }}>
             Тут з'являться карти,<br />що найбільше говорять до тебе.
           </p>
           <Link href="/cards"
-            className="text-[11px] font-[600] tracking-[0.12em] uppercase"
+            className="text-[14px] font-[600] tracking-[0.12em] uppercase"
             style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.7)" }}>
             Перейти до карт →
           </Link>
@@ -77,7 +77,7 @@ export default function FavoritesPage() {
 
       {!loading && cards.length > 0 && (
         <>
-          <p className="px-6 mb-3 text-[10px] font-[600] tracking-[0.15em] uppercase"
+          <p className="px-6 mb-3 text-[13px] font-[600] tracking-[0.15em] uppercase"
             style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.25)" }}>
             {cards.length} {cards.length === 1 ? "карта" : cards.length < 5 ? "карти" : "карт"}
           </p>
@@ -94,7 +94,7 @@ export default function FavoritesPage() {
                       border: "1px solid rgba(139,159,212,.15)",
                     }}>
                     {card.arcana === "major"
-                      ? <span className="text-[20px]" style={{ color: "rgba(212,168,76,.45)" }}>✦</span>
+                      ? <span className="text-[22px]" style={{ color: "rgba(212,168,76,.45)" }}>✦</span>
                       : <svg width="18" height="18" viewBox="0 0 22 22" fill="none"
                           stroke="rgba(139,159,212,.35)" strokeWidth="1.4" strokeLinecap="round">
                           <rect x="5" y="1" width="12" height="20" rx="2.5" />
@@ -102,7 +102,7 @@ export default function FavoritesPage() {
                         </svg>
                     }
                   </div>
-                  <p className="text-[10px] text-center leading-tight px-0.5"
+                  <p className="text-[13px] text-center leading-tight px-0.5"
                     style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.7)" }}>
                     {card.name_uk}
                   </p>

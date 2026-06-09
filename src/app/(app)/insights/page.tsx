@@ -56,11 +56,11 @@ export default async function InsightsPage() {
     <div className="pt-4 pb-6">
       {/* Header */}
       <div className="px-6 pt-2 pb-5">
-        <h1 className="text-[28px] leading-[1.1]"
+        <h1 className="text-[31px] leading-[1.1]"
           style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
           Знаки
         </h1>
-        <p className="text-[12px] mt-0.5"
+        <p className="text-[15px] mt-0.5"
           style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.35)" }}>
           Що повертається до тебе
         </p>
@@ -69,12 +69,12 @@ export default async function InsightsPage() {
       {readings.length === 0 ? (
         <div className="mx-5 rounded-[18px] p-8 text-center"
           style={{ background: "rgba(13,11,30,.6)", border: "1px dashed rgba(139,159,212,.15)" }}>
-          <p className="text-[14px] italic mb-4"
+          <p className="text-[17px] italic mb-4"
             style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.4)" }}>
             Закономірності з'являться<br />після перших читань.
           </p>
           <Link href="/journal/new"
-            className="text-[11px] font-[600] tracking-[0.12em] uppercase"
+            className="text-[14px] font-[600] tracking-[0.12em] uppercase"
             style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.7)" }}>
             Перше читання →
           </Link>
@@ -86,22 +86,22 @@ export default async function InsightsPage() {
           <div className="grid grid-cols-2 gap-3">
             <div className="rounded-[18px] p-4 text-center"
               style={{ background: "rgba(13,11,30,.75)", border: "1px solid rgba(139,159,212,.12)" }}>
-              <p className="text-[34px] font-[400] leading-none mb-1"
+              <p className="text-[37px] font-[400] leading-none mb-1"
                 style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
                 {readings.length}
               </p>
-              <p className="text-[10px] font-[600] tracking-[0.15em] uppercase"
+              <p className="text-[13px] font-[600] tracking-[0.15em] uppercase"
                 style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
                 Читань
               </p>
             </div>
             <div className="rounded-[18px] p-4 text-center"
               style={{ background: "rgba(13,11,30,.75)", border: "1px solid rgba(139,159,212,.12)" }}>
-              <p className="text-[34px] font-[400] leading-none mb-1"
+              <p className="text-[37px] font-[400] leading-none mb-1"
                 style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
                 {total}
               </p>
-              <p className="text-[10px] font-[600] tracking-[0.15em] uppercase"
+              <p className="text-[13px] font-[600] tracking-[0.15em] uppercase"
                 style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
                 Карт розкладено
               </p>
@@ -111,7 +111,7 @@ export default async function InsightsPage() {
           {/* Monthly activity */}
           <div className="rounded-[18px] p-4"
             style={{ background: "rgba(13,11,30,.75)", border: "1px solid rgba(139,159,212,.12)" }}>
-            <p className="text-[10px] font-[600] tracking-[0.18em] uppercase mb-4"
+            <p className="text-[13px] font-[600] tracking-[0.18em] uppercase mb-4"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
               Активність за місяцями
             </p>
@@ -125,7 +125,7 @@ export default async function InsightsPage() {
                         ? "linear-gradient(to top, rgba(139,159,212,.5), rgba(139,159,212,.25))"
                         : "rgba(139,159,212,.08)",
                     }} />
-                  <span className="text-[9px]"
+                  <span className="text-[11px]"
                     style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.3)" }}>
                     {label}
                   </span>
@@ -138,7 +138,7 @@ export default async function InsightsPage() {
           {total > 0 && (
             <div className="rounded-[18px] p-4"
               style={{ background: "rgba(13,11,30,.75)", border: "1px solid rgba(139,159,212,.12)" }}>
-              <p className="text-[10px] font-[600] tracking-[0.18em] uppercase mb-3"
+              <p className="text-[13px] font-[600] tracking-[0.18em] uppercase mb-3"
                 style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
                 Аркани
               </p>
@@ -149,13 +149,13 @@ export default async function InsightsPage() {
               <div className="flex justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full" style={{ background: "rgba(212,168,76,.6)" }} />
-                  <span className="text-[11px]" style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.5)" }}>
+                  <span className="text-[14px]" style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.5)" }}>
                     Старший · {majorCount} ({majorPct}%)
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full" style={{ background: "rgba(139,159,212,.4)" }} />
-                  <span className="text-[11px]" style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.5)" }}>
+                  <span className="text-[14px]" style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.5)" }}>
                     Молодший · {minorCount} ({minorPct}%)
                   </span>
                 </div>
@@ -167,7 +167,7 @@ export default async function InsightsPage() {
           {topCards.length > 0 && (
             <div className="rounded-[18px] p-4"
               style={{ background: "rgba(13,11,30,.75)", border: "1px solid rgba(139,159,212,.12)" }}>
-              <p className="text-[10px] font-[600] tracking-[0.18em] uppercase mb-3"
+              <p className="text-[13px] font-[600] tracking-[0.18em] uppercase mb-3"
                 style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
                 Найчастіші карти
               </p>
@@ -175,17 +175,17 @@ export default async function InsightsPage() {
                 {topCards.map((card, i) => (
                   <Link key={card.card_id} href={`/cards/${card.card_id}`}
                     className="flex items-center gap-3">
-                    <span className="text-[11px] w-4 text-center flex-shrink-0"
+                    <span className="text-[14px] w-4 text-center flex-shrink-0"
                       style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.3)" }}>
                       {i + 1}
                     </span>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-[13px]"
+                        <span className="text-[16px]"
                           style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
                           {card.name_uk}
                         </span>
-                        <span className="text-[11px] ml-2 flex-shrink-0"
+                        <span className="text-[14px] ml-2 flex-shrink-0"
                           style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.4)" }}>
                           {card.count}×
                         </span>
@@ -210,7 +210,7 @@ export default async function InsightsPage() {
           {/* Recent readings timeline */}
           <div className="rounded-[18px] p-4"
             style={{ background: "rgba(13,11,30,.75)", border: "1px solid rgba(139,159,212,.12)" }}>
-            <p className="text-[10px] font-[600] tracking-[0.18em] uppercase mb-3"
+            <p className="text-[13px] font-[600] tracking-[0.18em] uppercase mb-3"
               style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
               Останні читання
             </p>
@@ -227,11 +227,11 @@ export default async function InsightsPage() {
                     )}
                   </div>
                   <div className="pb-3 min-w-0">
-                    <p className="text-[13px] mb-0.5 truncate"
+                    <p className="text-[16px] mb-0.5 truncate"
                       style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
                       {r.title}
                     </p>
-                    <p className="text-[10px]"
+                    <p className="text-[13px]"
                       style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.3)" }}>
                       {new Date(r.created_at).toLocaleDateString("uk-UA", { day: "numeric", month: "long" })}
                     </p>
@@ -241,7 +241,7 @@ export default async function InsightsPage() {
             </div>
             {readings.length > 5 && (
               <Link href="/journal"
-                className="block text-center mt-2 text-[11px] font-[600] tracking-[0.1em] uppercase"
+                className="block text-center mt-2 text-[14px] font-[600] tracking-[0.1em] uppercase"
                 style={{ fontFamily: "var(--font-manrope)", color: "rgba(139,159,212,.6)" }}>
                 Всі читання →
               </Link>

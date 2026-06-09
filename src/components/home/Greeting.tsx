@@ -27,13 +27,13 @@ export default function Greeting() {
 
   return (
     <>
-      <h1 className="text-[36px] leading-[1.1] mb-1"
+      <h1 className="text-[40px] leading-[1.1] mb-1"
         style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
         {greeting},<br />
         <em style={{ color: "#D4A84C" }}>Аню</em>
       </h1>
       {dateStr && (
-        <p className="text-[12px] capitalize"
+        <p className="text-[15px] capitalize"
           style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.35)" }}>
           {dateStr}
         </p>

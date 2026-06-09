@@ -26,7 +26,7 @@ function CardPlaceholder({ card }: { card: Card }) {
     <div className="w-full aspect-[2/3] rounded-[12px] flex flex-col items-center justify-center gap-2"
       style={{ background: color, border: "1px solid rgba(139,159,212,.12)" }}>
       {card.arcana === "major" ? (
-        <span className="text-[22px]" style={{ color: "rgba(212,168,76,.5)" }}>✦</span>
+        <span className="text-[24px]" style={{ color: "rgba(212,168,76,.5)" }}>✦</span>
       ) : (
         <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="rgba(139,159,212,.4)" strokeWidth="1.4" strokeLinecap="round">
           <rect x="5" y="1" width="12" height="20" rx="2.5" />
@@ -34,7 +34,7 @@ function CardPlaceholder({ card }: { card: Card }) {
         </svg>
       )}
       {card.number !== null && (
-        <span className="text-[10px]" style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.2)" }}>
+        <span className="text-[13px]" style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.2)" }}>
           {card.arcana === "major" ? ["0","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"][card.number] : card.number}
         </span>
       )}
@@ -87,11 +87,11 @@ export default function CardsPage() {
     <div className="pt-4 pb-6">
       {/* Header */}
       <div className="px-6 pt-2 pb-4">
-        <h1 className="text-[28px] leading-[1.1] mb-1"
+        <h1 className="text-[31px] leading-[1.1] mb-1"
           style={{ fontFamily: "var(--font-marcellus)", color: "#EAF0F8" }}>
           Карти
         </h1>
-        <p className="text-[12px]"
+        <p className="text-[15px]"
           style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.35)" }}>
           Мова 78 символів
         </p>
@@ -109,7 +109,7 @@ export default function CardsPage() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Пошук карт..."
-            className="w-full pl-10 pr-4 py-3 rounded-[14px] text-[13px] outline-none"
+            className="w-full pl-10 pr-4 py-3 rounded-[14px] text-[16px] outline-none"
             style={{
               background: "rgba(13,11,30,.8)",
               border: "1px solid rgba(139,159,212,.15)",
@@ -124,7 +124,7 @@ export default function CardsPage() {
       <div className="flex gap-2 px-5 mb-4 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
         {filters.map(({ key, label }) => (
           <button key={key} onClick={() => setFilter(key)}
-            className="flex-shrink-0 px-3.5 py-1.5 rounded-full text-[10px] font-[600] tracking-[0.1em] uppercase transition-all"
+            className="flex-shrink-0 px-3.5 py-1.5 rounded-full text-[13px] font-[600] tracking-[0.1em] uppercase transition-all"
             style={{
               fontFamily: "var(--font-manrope)",
               background: filter === key ? "rgba(139,159,212,.2)" : "rgba(13,11,30,.8)",
@@ -137,7 +137,7 @@ export default function CardsPage() {
       </div>
 
       {/* Count */}
-      <p className="px-6 mb-3 text-[10px] font-[600] tracking-[0.15em] uppercase"
+      <p className="px-6 mb-3 text-[13px] font-[600] tracking-[0.15em] uppercase"
         style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.25)" }}>
         {filtered.length} {filtered.length === 1 ? "карта" : "карт"}
       </p>
@@ -145,7 +145,7 @@ export default function CardsPage() {
       {/* Grid */}
       {loading ? (
         <div className="flex items-center justify-center py-20">
-          <span className="text-[13px] animate-pulse" style={{ color: "rgba(139,159,212,.5)", fontFamily: "var(--font-manrope)" }}>
+          <span className="text-[16px] animate-pulse" style={{ color: "rgba(139,159,212,.5)", fontFamily: "var(--font-manrope)" }}>
             Завантаження карт...
           </span>
         </div>
@@ -158,15 +158,15 @@ export default function CardsPage() {
               {favorites.has(card.id) && (
                 <div className="absolute top-1.5 right-1.5 w-5 h-5 rounded-full flex items-center justify-center"
                   style={{ background: "rgba(13,11,30,.8)" }}>
-                  <span className="text-[9px]" style={{ color: "#D4A84C" }}>♊</span>
+                  <span className="text-[11px]" style={{ color: "#D4A84C" }}>♊</span>
                 </div>
               )}
-              <p className="text-[10px] text-center leading-tight px-0.5"
+              <p className="text-[13px] text-center leading-tight px-0.5"
                 style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.65)" }}>
                 {card.name_uk}
               </p>
               {card.suit && (
-                <p className="text-[8px] text-center -mt-1"
+                <p className="text-[10px] text-center -mt-1"
                   style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.28)" }}>
                   {SUIT_LABELS[card.suit]}
                 </p>
