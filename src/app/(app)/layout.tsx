@@ -1,5 +1,3 @@
-import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
 import BottomNav from "@/components/layout/BottomNav";
 import Stars from "@/components/layout/Stars";
 
@@ -8,9 +6,7 @@ export default async function AppLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) redirect("/login");
+  // Auth is enforced by middleware — no getUser() call needed here.
 
   return (
     <div className="relative min-h-dvh bg-[#06060F] overflow-hidden">

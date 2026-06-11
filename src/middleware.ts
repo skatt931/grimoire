@@ -25,8 +25,11 @@ export async function middleware(request: NextRequest) {
     }
   );
 
-  // Refresh session — keeps auth tokens alive
-  const { data: { user } } = await supabase.auth.getUser();
+  // Use getSession() — reads cookie locally, no network round-trip.
+  // getUser() would verify server-side on every request, adding ~200-400ms per navigation.
+  // Acceptable for a personal app; upgrade to getUser() if this ever becomes multi-tenant.
+  const { data: { session } } = await supabase.auth.getSession();
+  const user = session?.user ?? null;
 
   const { pathname } = request.nextUrl;
 
