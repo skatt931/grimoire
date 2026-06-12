@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import type { Card } from "@/lib/types";
+import CardImage from "@/components/cards/CardImage";
 
 const ROMAN = ["0","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"];
 const SUIT_LABELS: Record<string, string> = {
@@ -106,33 +107,40 @@ export default function CardDetailPage() {
         </button>
       </div>
 
-      {/* Card artwork placeholder */}
+      {/* Card artwork (real image, falls back to placeholder if missing) */}
       <div className="flex justify-center py-4">
-        <div className="w-[148px] h-[237px] rounded-[18px] flex flex-col items-center justify-center gap-3 relative overflow-hidden"
-          style={{
-            background: card.arcana === "major"
-              ? "linear-gradient(160deg, #1E1040 0%, #0D0820 100%)"
-              : "linear-gradient(160deg, #0E1530 0%, #060F25 100%)",
-            border: "1px solid rgba(139,159,212,.2)",
-            boxShadow: "0 0 60px rgba(139,159,212,.18), 0 20px 60px rgba(0,0,0,.7)",
-          }}>
-          {/* Decorative SVG */}
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.6">
-            <circle cx="40" cy="40" r="30" stroke="rgba(212,168,76,.3)" strokeWidth="0.5" />
-            <circle cx="40" cy="40" r="22" stroke="rgba(139,159,212,.3)" strokeWidth="0.5" />
-            <path d="M40 10 L44 34 L40 38 L36 34 Z" fill="rgba(212,168,76,.2)" />
-            <path d="M40 70 L36 46 L40 42 L44 46 Z" fill="rgba(212,168,76,.15)" />
-            <path d="M10 40 L34 36 L38 40 L34 44 Z" fill="rgba(139,159,212,.2)" />
-            <path d="M70 40 L46 44 L42 40 L46 36 Z" fill="rgba(139,159,212,.15)" />
-            <circle cx="40" cy="40" r="4" fill="rgba(212,168,76,.4)" />
-          </svg>
-          {card.arcana === "major" && card.number !== null && (
-            <span className="text-[14px] tracking-[0.25em]"
-              style={{ fontFamily: "var(--font-marcellus)", color: "rgba(212,168,76,.6)" }}>
-              {ROMAN[card.number]}
-            </span>
-          )}
-        </div>
+        <CardImage
+          cardId={card.id}
+          alt={card.name_uk}
+          imgClassName="w-[148px] h-[237px] rounded-[18px] object-cover"
+          fallback={
+            <div className="w-[148px] h-[237px] rounded-[18px] flex flex-col items-center justify-center gap-3 relative overflow-hidden"
+              style={{
+                background: card.arcana === "major"
+                  ? "linear-gradient(160deg, #1E1040 0%, #0D0820 100%)"
+                  : "linear-gradient(160deg, #0E1530 0%, #060F25 100%)",
+                border: "1px solid rgba(139,159,212,.2)",
+                boxShadow: "0 0 60px rgba(139,159,212,.18), 0 20px 60px rgba(0,0,0,.7)",
+              }}>
+              {/* Decorative SVG */}
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.6">
+                <circle cx="40" cy="40" r="30" stroke="rgba(212,168,76,.3)" strokeWidth="0.5" />
+                <circle cx="40" cy="40" r="22" stroke="rgba(139,159,212,.3)" strokeWidth="0.5" />
+                <path d="M40 10 L44 34 L40 38 L36 34 Z" fill="rgba(212,168,76,.2)" />
+                <path d="M40 70 L36 46 L40 42 L44 46 Z" fill="rgba(212,168,76,.15)" />
+                <path d="M10 40 L34 36 L38 40 L34 44 Z" fill="rgba(139,159,212,.2)" />
+                <path d="M70 40 L46 44 L42 40 L46 36 Z" fill="rgba(139,159,212,.15)" />
+                <circle cx="40" cy="40" r="4" fill="rgba(212,168,76,.4)" />
+              </svg>
+              {card.arcana === "major" && card.number !== null && (
+                <span className="text-[14px] tracking-[0.25em]"
+                  style={{ fontFamily: "var(--font-marcellus)", color: "rgba(212,168,76,.6)" }}>
+                  {ROMAN[card.number]}
+                </span>
+              )}
+            </div>
+          }
+        />
       </div>
 
       {/* Card info */}

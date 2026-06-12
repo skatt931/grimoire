@@ -4,6 +4,7 @@ import { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import type { Card } from "@/lib/types";
+import CardImage from "@/components/cards/CardImage";
 
 const SUIT_LABELS: Record<string, string> = {
   wands: "Жезли",
@@ -154,7 +155,12 @@ export default function CardsPage() {
           {filtered.map((card) => (
             <Link key={card.id} href={`/cards/${card.id}`}
               className="flex flex-col gap-1.5 relative">
-              <CardPlaceholder card={card} />
+              <CardImage
+                cardId={card.id}
+                alt={card.name_uk}
+                imgClassName="w-full aspect-[2/3] rounded-[12px] object-cover"
+                fallback={<CardPlaceholder card={card} />}
+              />
               {favorites.has(card.id) && (
                 <div className="absolute top-1.5 right-1.5 w-5 h-5 rounded-full flex items-center justify-center"
                   style={{ background: "rgba(13,11,30,.8)" }}>
