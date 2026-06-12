@@ -36,7 +36,7 @@ function CardPlaceholder({ card }: { card: Card }) {
       )}
       {card.number !== null && (
         <span className="text-[13px]" style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.2)" }}>
-          {card.arcana === "major" ? ["0","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"][card.number] : card.number}
+          {card.arcana === "major" ? ["0","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI","XXII","XXIII"][card.number] : card.number}
         </span>
       )}
     </div>

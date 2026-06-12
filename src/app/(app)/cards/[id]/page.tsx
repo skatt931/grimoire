@@ -6,7 +6,7 @@ import { createClient } from "@/lib/supabase/client";
 import type { Card } from "@/lib/types";
 import CardImage from "@/components/cards/CardImage";
 
-const ROMAN = ["0","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"];
+const ROMAN = ["0","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI","XXII","XXIII"];
 const SUIT_LABELS: Record<string, string> = {
   wands: "Жезли", cups: "Кубки", swords: "Мечі", pentacles: "Пентаклі",
 };
