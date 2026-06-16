@@ -10,11 +10,11 @@ fi
 
 for file in public/cards/*.{heic,HEIC}; do
   output="${file%.*}.jpg"
-
-  if [[ -f "$output" ]]; then
-    continue
-  fi
-
-  sips -s format jpeg "$file" --out "$output" >/dev/null
-  echo "Converted $(basename "$file") -> $(basename "$output")"
+  sips \
+    -s format jpeg \
+    -s formatOptions 80 \
+    --resampleHeightWidthMax 1400 \
+    "$file" \
+    --out "$output" >/dev/null
+  echo "Prepared $(basename "$output")"
 done

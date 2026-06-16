@@ -153,7 +153,7 @@ export default function CardsPage() {
       ) : (
         <div className="grid grid-cols-3 gap-2.5 px-5">
           {filtered.map((card) => (
-            <Link key={card.id} href={`/cards/${card.id}`}
+            <Link key={card.id} href={`/cards/${card.id}`} prefetch={false}
               className="flex flex-col gap-1.5 relative">
               <CardImage
                 cardId={card.id}

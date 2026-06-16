@@ -43,6 +43,7 @@ export default function CardImage({
       src={activeSource}
       alt={alt}
       loading="lazy"
+      decoding="async"
       onError={() =>
         setFailureState((current) => ({
           key: sourceKey,
