@@ -112,6 +112,7 @@ export default function CardDetailPage() {
         <CardImage
           cardId={card.id}
           alt={card.name_uk}
+          imageUrl={card.image_url}
           imgClassName="w-[148px] h-[237px] rounded-[18px] object-cover"
           fallback={
             <div className="w-[148px] h-[237px] rounded-[18px] flex flex-col items-center justify-center gap-3 relative overflow-hidden"

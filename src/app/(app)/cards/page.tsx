@@ -158,6 +158,7 @@ export default function CardsPage() {
               <CardImage
                 cardId={card.id}
                 alt={card.name_uk}
+                imageUrl={card.image_url}
                 imgClassName="w-full aspect-[2/3] rounded-[12px] object-cover"
                 fallback={<CardPlaceholder card={card} />}
               />
