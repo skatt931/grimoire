@@ -84,6 +84,8 @@ export default function CardsPage() {
     { key: "pentacles", label: "Пентаклі" },
   ];
 
+  const totalCardsLabel = loading ? "Мова 80 символів" : `Мова ${cards.length} символів`;
+
   return (
     <div className="pt-4 pb-6">
       {/* Header */}
@@ -94,7 +96,7 @@ export default function CardsPage() {
         </h1>
         <p className="text-[15px]"
           style={{ fontFamily: "var(--font-manrope)", color: "rgba(234,240,248,.35)" }}>
-          Мова 78 символів
+          {totalCardsLabel}
         </p>
       </div>
 
