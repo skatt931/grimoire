@@ -4,12 +4,17 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import type { Card } from "@/lib/types";
+import CardImage from "@/components/cards/CardImage";
 
 const SUIT_COLORS: Record<string, string> = {
   wands:     "rgba(212,100,76,.12)",
   cups:      "rgba(76,140,212,.12)",
   swords:    "rgba(139,159,212,.12)",
   pentacles: "rgba(100,180,100,.12)",
+};
+
+type FavoriteCardRow = {
+  cards: Card | null;
 };
 
 export default function FavoritesPage() {
@@ -21,7 +26,7 @@ export default function FavoritesPage() {
       .from("favorites")
       .select("cards(*)")
       .then(({ data }) => {
-        setCards((data ?? []).map((f: any) => f.cards).filter(Boolean));
+        setCards(((data as FavoriteCardRow[] | null) ?? []).map((f) => f.cards).filter(Boolean) as Card[]);
         setLoading(false);
       });
   }, []);
@@ -65,7 +70,7 @@ export default function FavoritesPage() {
           </div>
           <p className="text-[17px] italic mb-4"
             style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.4)" }}>
-            Тут з'являться карти,<br />що найбільше говорять до тебе.
+            Тут з&rsquo;являться карти,<br />що найбільше говорять до тебе.
           </p>
           <Link href="/cards"
             className="text-[14px] font-[600] tracking-[0.12em] uppercase"
@@ -85,23 +90,32 @@ export default function FavoritesPage() {
             {cards.map((card) => (
               <div key={card.id} className="relative">
                 <Link href={`/cards/${card.id}`} className="flex flex-col gap-1.5">
-                  {/* Card thumbnail */}
-                  <div className="w-full aspect-[2/3] rounded-[12px] flex flex-col items-center justify-center gap-2"
-                    style={{
-                      background: card.arcana === "major"
-                        ? "rgba(212,168,76,.1)"
-                        : (SUIT_COLORS[card.suit as string] ?? "rgba(139,159,212,.1)"),
-                      border: "1px solid rgba(139,159,212,.15)",
-                    }}>
-                    {card.arcana === "major"
-                      ? <span className="text-[22px]" style={{ color: "rgba(212,168,76,.45)" }}>✦</span>
-                      : <svg width="18" height="18" viewBox="0 0 22 22" fill="none"
-                          stroke="rgba(139,159,212,.35)" strokeWidth="1.4" strokeLinecap="round">
-                          <rect x="5" y="1" width="12" height="20" rx="2.5" />
-                          <circle cx="11" cy="10" r="3" />
-                        </svg>
+                  <CardImage
+                    cardId={card.id}
+                    alt={card.name_uk}
+                    imageUrl={card.image_url}
+                    imgClassName="w-full aspect-[2/3] rounded-[12px] object-cover"
+                    fallback={
+                      <div
+                        className="w-full aspect-[2/3] rounded-[12px] flex flex-col items-center justify-center gap-2"
+                        style={{
+                          background: card.arcana === "major"
+                            ? "rgba(212,168,76,.1)"
+                            : (SUIT_COLORS[card.suit as string] ?? "rgba(139,159,212,.1)"),
+                          border: "1px solid rgba(139,159,212,.15)",
+                        }}
+                      >
+                        {card.arcana === "major"
+                          ? <span className="text-[22px]" style={{ color: "rgba(212,168,76,.45)" }}>✦</span>
+                          : <svg width="18" height="18" viewBox="0 0 22 22" fill="none"
+                              stroke="rgba(139,159,212,.35)" strokeWidth="1.4" strokeLinecap="round">
+                              <rect x="5" y="1" width="12" height="20" rx="2.5" />
+                              <circle cx="11" cy="10" r="3" />
+                            </svg>
+                        }
+                      </div>
                     }
-                  </div>
+                  />
                   <p className="text-[13px] text-center leading-tight px-0.5"
                     style={{ fontFamily: "var(--font-marcellus)", color: "rgba(234,240,248,.7)" }}>
                     {card.name_uk}
